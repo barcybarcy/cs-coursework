@@ -1,0 +1,12 @@
+	void mymain() {
+		int n = 0;
+		System.out.print("숫자 개수: ");
+		n = scan.nextInt();
+		int array[] = new int[n];
+		for (int i = 0; i < n; i++)
+			array[i] = rand.nextInt(100);
+		for (int num : array)
+			System.out.print(num + " ");
+		System.out.println();
+		scan.close();
+	}

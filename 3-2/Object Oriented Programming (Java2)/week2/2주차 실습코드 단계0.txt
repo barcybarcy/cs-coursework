@@ -1,0 +1,13 @@
+package week2;
+
+import java.util.Scanner;
+
+public class Week2 {
+	static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		Week2 my = new Week2();
+		my.mymain();
+		scan.close();
+	}
+}
