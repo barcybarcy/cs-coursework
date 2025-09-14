@@ -1,6 +1,14 @@
+# 2주 과제 보고서
+
+이름: 조수민
+학번: 201540321
+
 # 1. 과제 개요
 
 본 과제에서는 5년간의 월 매출 데이터를 입력받아 다음을 계산하고 출력한다.
+
+<aside>
+💡
 
 1단계 (AI의 도움을 받을 수 있음)
 
@@ -17,6 +25,8 @@
 (4) 월 매출 증감율(전년동월대비)이 가장 큰 월(OOOO년OO월)와 가장 작은 달을 찾아 출력
 
 증감율(%) = 이번값 / 이전값 * 100
+
+</aside>
 
 # 2. 구현 내용
 
@@ -39,15 +49,14 @@ public static void main(String[] args){}
 - AI가 (이번값 - 이전값) / 이전값 * 100 공식을 제안해 주었음.
 - 이를 그대로 적용하여 연도별 증감액과 증감율을 출력하였다.
 
-    ```java
-    // 증감율(%) = (이번값 - 이전값) / 이전값 * 100
-    if (year > 0) {
-      double difference = yearlyTotals[year] - yearlyTotals[year - 1];
-      double changeRate = (difference / yearlyTotals[year - 1]) * 100;
-      System.out.printf(" (증감액: %.1f, 증감율: %.2f%%)", difference, changeRate);
-    }
-    ```
-
+```java
+// 증감율(%) = (이번값 - 이전값) / 이전값 * 100
+if (year > 0) {
+  double difference = yearlyTotals[year] - yearlyTotals[year - 1];
+  double changeRate = (difference / yearlyTotals[year - 1]) * 100;
+  System.out.printf(" (증감액: %.1f, 증감율: %.2f%%)", difference, changeRate);
+}
+```
 
 ## 2단계 - 스스로 작성한 부분
 
@@ -59,23 +68,23 @@ public static void main(String[] args){}
 
   두 함수로 분리하여 관리.
 
-    ```java
-    double[][] readSalesData(){}
-    void calculateMonthlyAverages(double[][] salesData){}
-    void calculateMonthlGrowthRates(double[][] salesData){
-    void calculateAndDisplay(double[][] salesData){
-    	...
-    	calculateMonthlyAverages(salesData);
-    	calculateMonthlGrowthRates(salesData);
-    }
-    
-    void mymain() {
-        double[][] salesData = readSalesData();
-        calculateAndDisplay(salesData);
-        scan.close();
-    }
-    ```
 
+```java
+double[][] readSalesData(){}
+void calculateMonthlyAverages(double[][] salesData){}
+void calculateMonthlGrowthRates(double[][] salesData){
+void calculateAndDisplay(double[][] salesData){
+	...
+	calculateMonthlyAverages(salesData);
+	calculateMonthlGrowthRates(salesData);
+}
+
+void mymain() {
+    double[][] salesData = readSalesData();
+    calculateAndDisplay(salesData);
+    scan.close();
+}
+```
 
 ### 월평균 매출 계산
 
@@ -106,13 +115,13 @@ void calculateMonthlGrowthRates(double[][] salesData) {
 
 # 3. 실행 결과
 
-### 1단계
+## 1단계
 
-![Screenshot 2025-09-14 at 6.24.37 PM.png](attachment:9ff55e23-cb59-4b7f-9601-06e3522830a5:Screenshot_2025-09-14_at_6.24.37_PM.png)
+![Screenshot 2025-09-14 at 6.24.37 PM.png](2%EC%A3%BC%20%EA%B3%BC%EC%A0%9C%20%EB%B3%B4%EA%B3%A0%EC%84%9C%2026d77b59e04280218450c301316a0632/Screenshot_2025-09-14_at_6.24.37_PM.png)
 
-### 2단계
+## 2단계
 
-![Screenshot 2025-09-14 at 6.24.57 PM.png](attachment:4539084e-8011-442f-8922-5fcbaa7b73da:Screenshot_2025-09-14_at_6.24.57_PM.png)
+![Screenshot 2025-09-14 at 6.24.57 PM.png](2%EC%A3%BC%20%EA%B3%BC%EC%A0%9C%20%EB%B3%B4%EA%B3%A0%EC%84%9C%2026d77b59e04280218450c301316a0632/Screenshot_2025-09-14_at_6.24.57_PM.png)
 
 # 4. Lesson Learn
 
